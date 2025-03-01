@@ -39,7 +39,16 @@ insert into aplicacion(nombre) values
 ('Google Chrome'),
 ('Bing'),
 ('Gmail'),
-('Outlook');
+('Outlook'),
+('Siri'),
+('LinkedIn'),
+('Meet'),
+('SmartWatch'),
+('DoorDash'),
+('Slack'),
+('Twitch'),
+('Google Gemini'),
+('SnapChat');
 
 insert into tarea(nombre, peso, id_app) values
 ('Enviar mensaje de texto', 1024, 1),
@@ -122,7 +131,16 @@ insert into tarea(nombre, peso, id_app) values
 ('Marcar correo como spam', 5000, 24), -- Gmail
 ('Programar un correo', 10000, 24), -- Gmail
 ('Crear una regla de filtrado', 5000, 25), -- Outlook
-('Adjuntar imagen a correo', 300000, 25); -- Outlook
+('Adjuntar imagen a correo', 300000, 25), -- Outlook
+('Responder', 5000, 26),
+('Aplicar a trabajo', 1500000, 27),
+('Grabar reunión', 50000000, 28),
+('Comunicación por minuto con la red', 10000, 29),
+('Órdenes en línea', 500000, 30),
+('Enviar mensaje', 1024, 31),
+('Ver una hora de transmisión', 5000000000, 32),
+('Realizar pregunta', 50000, 33),
+('Enviar un snap', 3000000, 34);
 """
 
 bienvenida = """¡Bienvenido al sistema de registro de tareas!
