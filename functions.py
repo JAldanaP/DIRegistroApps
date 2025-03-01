@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS REGISTRO(
 ID_REGISTRO INTEGER primary KEY autoincrement,
 ID_APP INTEGER NOT NULL references APLICACION(ID_APP) NOT deferrable,
 ID_TASK INTEGER NOT NULL references TAREA(ID_TASK) NOT deferrable,
-CANTIDAD INTEGER NOT null);
+CANTIDAD BIGINT NOT null);
 
 insert into aplicacion(nombre) values
 ('Whatsapp'),
@@ -163,8 +163,14 @@ def clasificacion(c: float):
     mag = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
     cant = c
     m = 0
-    for i in range(0, len(mag)):
-        if (c / 10 ** (3 * i)) >= 1000:
-            m = i + 1
-            cant = (c / 10 ** (3 * (i + 1)))
-    return f"{cant:.2f} {mag[m]}"
+    try:
+        for i in range(0, len(mag)):
+            if (c / 10 ** (3 * i)) >= 1000:
+                m = i + 1
+                cant = (c / 10 ** (3 * (i + 1)))
+        return f"{cant:.2f} {mag[m]}"
+    except IndexError:
+        print("Inicio clausula")
+        cant = (c / 10 ** (3 * (len(mag) - 1)))
+        m = len(mag) - 1
+        return f"{cant:.2f} {mag[m]}"
