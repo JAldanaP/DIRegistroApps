@@ -170,7 +170,6 @@ def clasificacion(c: float):
                 cant = (c / 10 ** (3 * (i + 1)))
         return f"{cant:.2f} {mag[m]}"
     except IndexError:
-        print("Inicio clausula")
         cant = (c / 10 ** (3 * (len(mag) - 1)))
         m = len(mag) - 1
         return f"{cant:.2f} {mag[m]}"

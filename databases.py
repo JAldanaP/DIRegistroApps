@@ -54,7 +54,7 @@ def lista_app(conn):
         l_r = list(resultados)
         while True:
             try:
-                print("Por favor, seleccione la respectiva aplicación: ")
+                print("Por favor, seleccione la respectiva aplicación: (#)")
                 for r in l_r:
                     print(f"{r[0]}. {r[1]}")
                 app = int(input()) - 1
@@ -74,7 +74,7 @@ def lista_tk(conn, app: int):
         l_r = list(resultados)
         while True:
             try:
-                print("Seleccione la respectiva tarea:")
+                print("Seleccione la respectiva tarea: (#)")
                 for r in range(0, len(l_r)):
                     print(f"{r+1}. {l_r[r][1]} - ({q.clasificacion(l_r[r][2])})")
                 tk = int(input()) - 1

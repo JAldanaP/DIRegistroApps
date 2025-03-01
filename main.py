@@ -13,7 +13,10 @@ while True:
         elif op == 2:
             db.suma(conn)
             print("¡Gracias por usar nuestro servicio!")
-            break
+            if dc := (input("¿Desea salir? (Si / No) ")).lower() == 'si':
+                break
+            else:
+                pass
         elif op == 3:
             db.eliminar_reg(conn, 0)
         elif op == 4:
